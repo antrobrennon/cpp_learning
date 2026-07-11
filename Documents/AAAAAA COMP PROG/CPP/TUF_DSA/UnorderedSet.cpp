@@ -1,7 +1,0 @@
-// insert() - to insert an element in the unordered set.
-// begin() - return an iterator pointing to the first element in the unordered set.
-// end() - returns an iterator to the theoretical element after the last element.
-// count() - it returns 1 if the element is present in the container otherwise 0.
-// clear() - deletes all the elements in unordered set.
-// find() - to search an element in the unordered set.
-// size() - returns the size of the unordered set.
