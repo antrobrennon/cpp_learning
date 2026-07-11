@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build active file",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "${file}",
+        "-Wall",
+        "-Wextra",
+        "-g3",
+        "-finput-charset=UTF-8",
+        "-fexec-charset=UTF-8",
+        "-o",
+        "${workspaceFolder}/output/DSA/${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/DSA"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
