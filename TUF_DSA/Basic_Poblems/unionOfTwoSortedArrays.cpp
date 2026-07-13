@@ -4,53 +4,38 @@ using namespace std;
 class Solution {
 public:
     vector<int> unionArray(vector<int>& nums1, vector<int>& nums2) {
-        int l1 = nums1.size()-1, l2 = nums2.size()-1;
-        int i = 0, j = 0 ; 
-        int result = INT_MIN;
-        vector<int> results;
+        set<int> s;
 
+        for(int i = 0 ; i < nums1.size() ; i++)
+            s.insert(nums1[i]);
+        
+        for(int i = 0 ; i < nums2.size() ; i++)
+            s.insert(nums2[i]);
 
-        while(i <= l1 && j <= l2){
-            if(nums1[i] < nums2[j] && nums1[i] != result){
-                results.push_back(nums1[i]);
-                result = nums1[i];
-                i++;
-            }
-            else if(nums2[j] < nums1[i] && nums2[j] != result){
-                results.push_back(nums2[j]);
-                result = nums2[j];
-                j++;
-            }
-            else if(nums1[i] == nums2[j] && nums1[i] != result){
-                results.push_back(nums1[i]);
-                result = nums1[i];
-                i++; j++;
-            }
-            else {
-                if(nums1[i] < nums2[j] && nums1[i] == result) i++;
-                if(nums2[j] < nums1[i] && nums2[j] == result) j++;
-                if(nums1[i] == nums2[j] && nums1[j] == result)i++ ; j++;
-            }
+        vector<int> res;
+        for(auto i : s)
+            res.push_back(i);
 
-        }
-        while(i <= l1) {results.push_back(nums1[i]); i++;}
-        while(j <= l2) {results.push_back(nums2[j]); j++;}
-        return results;
+        return res;
     }
 };
 
 int main(){
     Solution obj1;
 
-    int n, m ;
-    cin >> n >> m;
+    int n;
+    cin >> n;
 
     vector<int> arr1(n);
-    vector<int> arr2(m);
 
     for(int i = 0 ; i < n ; i++){
         cin >> arr1[i];
     }
+     
+    int m;
+    cin >> m;
+    
+    vector<int> arr2(m);
 
     for(int j = 0 ; j < m ; j++){
         cin >> arr2[j];
