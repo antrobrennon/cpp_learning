@@ -3,7 +3,7 @@ using namespace std;
 
 int partition(int left, int right, vector<int>&arr){
     int pivot = arr[left];
-    int i = left;
+    int i = left+1;
     int j = right;
 
     while(i < j){
